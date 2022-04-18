@@ -18,4 +18,6 @@ target_link_libraries(config_creation_tests
   GTest::GTest
   config_creation_lib)
 
-add_test(test_gtests config_creation_tests)
+# Add all tests created using GoogleTest to CTEST.
+include(GoogleTest)
+gtest_discover_tests(config_creation_tests)
